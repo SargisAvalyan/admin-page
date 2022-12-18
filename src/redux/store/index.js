@@ -1,3 +1,15 @@
-import { createStore } from "redux";
-import addReducer  from "./reduserAdd";
-export const store = createStore(addReducer)
+import { createStore, combineReducers } from "redux";
+import addSchoolReducer  from "./reducers/reduserAdd";
+
+const rootReducer = combineReducers({
+    addSchoolReducer
+
+    
+})
+
+
+
+
+
+
+export const store = createStore(rootReducer)

@@ -3,7 +3,7 @@ const initialState = {
 }
 
 
- const addReducer = (state = initialState, action) => {
+ const addSchoolReducer = (state = initialState, action) => {
     switch (action.type) {
         case "ADD_SCHOOL":
             return { ...state, schoolList: [...state.schoolList, action.payload] }
@@ -15,4 +15,4 @@ const initialState = {
             return state
     }
 }
-export default addReducer
+export default addSchoolReducer
