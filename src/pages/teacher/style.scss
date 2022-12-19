@@ -1,15 +1,14 @@
 .add-button{
     width: 200px;
     height: 60px;
-    background: linear-gradient(90deg,rgb(7, 212, 144),rgb(7, 130, 212), rgb(4, 157, 204));
+    background: linear-gradient(90deg,rgb(7, 212, 144), rgb(7, 109, 139));
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 .schooladd{
     width: 190px;
-    height: 50px;
+    height: 56px;
     background-color: rgb(24, 231, 214);
     color: white;
     &:hover{
@@ -20,8 +19,7 @@
 }
 .category-inputs{
     width: 100%;
-    min-height: calc(100vh - 64px);
-    height: 100%;
+    height: calc(100vh - 64px);
     overflow: auto;
     background-color: rgba(1, 117, 102, 0.644);
     display: flex;

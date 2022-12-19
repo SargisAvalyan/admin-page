@@ -32,8 +32,9 @@
     color: white;
 }
 
-.ul li .active {
+ul li  a .active {
     background-color: rgb(7, 212, 144);
+    font-size: 20px;
 }
 
 .admin-list ul li {
@@ -47,7 +48,13 @@
     &:hover {
         cursor: pointer;
         background-color: rgb(7, 212, 144);
-    }
+        }
+        &.active{
+           
+            background-color: rgb(106, 212, 7);
+        
+    
+        }
 }
 
 .admin-title {

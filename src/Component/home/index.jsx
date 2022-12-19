@@ -10,7 +10,7 @@ const Home = () => {
             <div className='admin-list'>
                 <div className='logo'>ՀՀ ՏԱՎՈՒՇԻ ՄԱՐԶԻ ՀԻՄՆԱԿԱՆ ԴՊՐՈՑՆԵՐ</div>
                 <ul>
-                    <li>
+                    <li >
                         <NavLink to={"/School"}>ԴՊՐՈՑ N.</NavLink>
                     </li>
                     <li>

@@ -1,0 +1,37 @@
+.add-box-conteiner{
+    width: 200px;
+    height: 250px;
+    border: 1.5px solid rgb(4, 4, 59);
+    
+
+   
+
+}
+.image-box{
+    width: 197px;
+    height: 97px;
+    background-color: aquamarine;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position:center;
+    display: flex;
+    justify-content: space-around;
+    
+}
+.infobox{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    p{
+        font-size: 18px;
+        color: rgb(13, 9, 235);
+        font-weight: bolder;
+    }
+    h5{
+        font-size: 13px;
+        color: rgb(1, 28, 31); 
+        font-weight: normal; 
+    }
+}
