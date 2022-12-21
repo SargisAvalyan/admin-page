@@ -3,8 +3,16 @@ import React from 'react'
 import image from "../../../images/school.png"
 import "./style.scss"
 
-const AddBox = ({ item, index }) => {
-    return (
+const AddBox = ({ item, index, onDelete, onEdit }) => {
+    const deleteSchool = () => {
+        onDelete()
+    }
+    const EditSchool = () => {
+        onEdit()
+    }
+    return (<>
+        <button className="deletebutton" onClick={deleteSchool}>Delete</button>
+        <button className="editbutton" onClick={EditSchool}>Edit</button>
         <div className='add-box-conteiner'>
             <div className='image-box' style={{ backgroundImage: `url(${image})` }}>
 
@@ -19,6 +27,7 @@ const AddBox = ({ item, index }) => {
                 <h5>Աշակերտներ: {item.childrenMaxCount}/հոգի</h5>
             </div>
         </div>
+    </>
     )
 }
 

@@ -11,7 +11,7 @@ const addSchoolReducer = (state = initialState, action) => {
       return {...state, schoolList: state.schoolList.filter((el, i) => i !== action.payload)}
     case 'EDIT_SCHOOL': {
 
-        console.log(action.payload) //{school: {}, index:}
+       
 
       const newUpdatedSchools = state.schoolList.map((item, i) => {
         if (action.payload.index === i) {

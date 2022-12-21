@@ -1,11 +1,13 @@
-import React, {useState} from 'react'
-import {useDispatch, useSelector} from 'react-redux'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import AddBox from './addBoxChildren';
 
 import "./style.scss"
 
 const Children = () => {
   const [ShowModal, setShowModal] = useState(false);
+  const [selectedChildren, setSelectedChildren] = useState(null)
+  const [selectedChildrenIndex, setSelectedChildrenIndex] = useState(null)
   const ShowModale = (e) => {
     setShowModal(ShowModal => !ShowModal)
   }
@@ -22,11 +24,16 @@ const Children = () => {
   const dispatch = useDispatch()
   const selectorChildren = useSelector(state => state.addChildrenReducer.childrenList)
   const handleChange = (e) => {
-    setChildrenData({...childrenData, [e.target.name]: e.target.value})
+    setChildrenData({ ...childrenData, [e.target.name]: e.target.value })
   }
   const addChildrenlList = () => {
-    if (validate()) {
-      dispatch({type: "ADD_CHILDREN", payload: childrenData})
+    if ( selectedChildren) {
+      dispatch({type:"EDIT_CHILDREN", payload:{children:childrenData, index:selectedChildrenIndex}})
+      setSelectedChildrenIndex(null)
+      setSelectedChildren(null)
+    }else{
+      dispatch({ type: "ADD_CHILDREN", payload: childrenData })
+    }
       setChildrenData({
         ...childrenData,
         firstName: '',
@@ -36,62 +43,69 @@ const Children = () => {
       })
       setShowModal(ShowModal => !ShowModal)
     }
-
-
+    const handleDelete = (index) => {
+    dispatch({ type: "DELETE_CHILDREN", payload: index })
+  }
+   
+   const handleEdit = (item, index) => {
+    setSelectedChildren(item)
+    setSelectedChildrenIndex(index)
   }
 
-  const validate = () => {
-    let isValidate = true
+  useEffect(() => {
+    if (selectedChildren) {
+      setChildrenData(selectedChildren)
+      setShowModal(true)
+      console.log(selectedChildren);
+    }
 
-    return true
-  }
+  }, [selectedChildren])
 
-  const handleDelete = (index) => {
-    dispatch({type: "DELETE_CHILDREN", payload: index})
-  }
-  console.log(selectorChildren);
+
+
   return (
     <div className='admin-title'>
       <div className='category'>
-        ԱՇԱԿԵՐՏՆԵՐ
-      </div>
-      <div className='category-info'>
+        <p>
+          ԱՇԱԿԵՐՏՆԵՐ
+        </p>
         <div className='add-button'>
           <button className='schooladd' onClick={ShowModale}>Ավելացնել աշակերտ</button>
         </div>
+      </div>
+      <div className='category-info'>
+
         <div className='info'>
           {selectorChildren.length ? selectorChildren.map((item, index) => {
-            return <div className='info'>
-              <div>
-                {/*<button className="deletebutton" onClick={(e) => handleDelete(e, index)} >Delete</button>*/}
-                {/*<button className="deletebutton" >Edite</button>*/}
-                <AddBox type={'chilrden'} item={item} index={index} onDelete={() => handleDelete(index)}/>
+            return <div  key={index} className='info'>
+              <div key={index}>
+                <AddBox type={'chilrden'} item={item} index={index} onDelete={() => handleDelete(index)} onEdit={() => handleEdit(item, index)}/>
               </div>
 
             </div>
 
 
-          }) : null}
+          }) : <div className='empty-box'><p>Աշակարտների ցանկը դատարկ է ․ ․ ․</p></div> }
         </div>
 
 
         {ShowModal &&
           <div className='category-inputs'>
             <label>
-              <input type="text" name="firstName" placeholder='firstName' onChange={handleChange}/>
+              <input type="text" value={childrenData.firstName}  name="firstName" placeholder='firstName' onChange={handleChange} />
             </label>
             <label>
-              <input type="text" name="lastName" placeholder='lastName' onChange={handleChange}/>
+              <input type="text" value={childrenData.lastName} name="lastName" placeholder='lastName' onChange={handleChange} />
             </label>
             <label>
-              <input type="text" name="adress" placeholder='adress' onChange={handleChange}/>
+              <input type="text" value={childrenData.adress} name="adress" placeholder='adress' onChange={handleChange} />
             </label>
             <label>
-              <input type="number" name="phoneNumber" placeholder='phoneNumber' onChange={handleChange}/>
+              <input type="number" value={childrenData.phoneNumber} name="phoneNumber" placeholder='phoneNumber' onChange={handleChange} />
             </label>
 
 
-            <button onClick={addChildrenlList}>Add School</button>
+            <button onClick={addChildrenlList}>{selectedChildren ? 'Save changes' : 'Add Children'}</button>
             <div>
             </div>
 

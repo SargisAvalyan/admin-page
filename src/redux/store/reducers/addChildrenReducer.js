@@ -9,17 +9,15 @@ const initialState = {
             return { ...state, childrenList: [...state.childrenList, action.payload] }
         case "DELETE_CHILDREN":
             return { ...state, childrenList:state.childrenList.filter((el, i)=>i!==action.payload) }
-            // case 'EDIT_SCHOOL':
-            //     {
-                   
-            //         const newUpdatedSchools = state.schoolList.map((item, i) => {
-            //             if (action.payload.index === i) {
-            //                 item = action.payload.schoolData
-            //             }
-            //             return item
-            //         })
-            //         return {...state, schoolList: newUpdatedSchools }
-            //     }
+            case 'EDIT_CHILDREN': {
+                const newUpdatedChildren = state.childrenList.map((item, i) => {
+                    if (action.payload.index === i) {
+                        item = action.payload.children
+                    }
+                    return item
+                })
+                return { ...state, childrenList: newUpdatedChildren }
+            }
         default:
             return state
     }
