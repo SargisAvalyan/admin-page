@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Children from '../../pages/children';
 import School from '../../pages/school';
 import Teacher from '../../pages/teacher';
+import SchoolDetailes from "../../pages/school/schoolDetailes"
 
  const Admin = () => {
   return (
@@ -12,6 +13,7 @@ import Teacher from '../../pages/teacher';
       <Route path={"/School"} element={<School/>} />
       <Route path={"/Teachers"} element={<Teacher/>} />
       <Route path={"/Children"} element={<Children/>} />
+      <Route path={"/School-detailes:id"} element={<SchoolDetailes/>} />
       <Route path= "*" element={<School/>}/>
     </Routes>
   </div>

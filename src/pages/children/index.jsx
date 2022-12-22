@@ -92,20 +92,20 @@ const Children = () => {
         {ShowModal &&
           <div className='category-inputs'>
             <label>
-              <input type="text" value={childrenData.firstName}  name="firstName" placeholder='firstName' onChange={handleChange} />
+              <input type="text" value={childrenData.firstName}  name="firstName" placeholder='Անուն' onChange={handleChange} />
             </label>
             <label>
-              <input type="text" value={childrenData.lastName} name="lastName" placeholder='lastName' onChange={handleChange} />
+              <input type="text" value={childrenData.lastName} name="lastName" placeholder='Ազգանուն' onChange={handleChange} />
             </label>
             <label>
-              <input type="text" value={childrenData.adress} name="adress" placeholder='adress' onChange={handleChange} />
+              <input type="text" value={childrenData.adress} name="adress" placeholder='Հասցե' onChange={handleChange} />
             </label>
             <label>
-              <input type="number" value={childrenData.phoneNumber} name="phoneNumber" placeholder='phoneNumber' onChange={handleChange} />
+              <input type="number" value={childrenData.phoneNumber} name="phoneNumber" placeholder='Հեռախոսահամար' onChange={handleChange} />
             </label>
 
 
-            <button onClick={addChildrenlList}>{selectedChildren ? 'Save changes' : 'Add Children'}</button>
+            <button onClick={addChildrenlList}>{selectedChildren ? 'Պահպանել' : 'Ավելացնել աշակերտ'}</button>
             <div>
             </div>
 

@@ -84,48 +84,51 @@ const School = () => {
           {selector.length ? selector.map((item, index) => {
             return <div key={index} className='info'>
               <div >
-                <AddBox item={item} index={index} onDelete={() => handleDelete(index)} onEdit={() => handleEdit(item, index)} />
+                <AddBox item={item} index={index}
+                  onDelete={() => handleDelete(index)}
+                  onEdit={() => handleEdit(item, index)}
+                />
               </div>
             </div>
-          }) : "datark"}
+          }) : <div className='empty-box'><p>Դպրոցների ցանկը դատարկ է ․ ․ ․</p></div>}
         </div>
 
 
         {ShowModal &&
           <div className='category-inputs'>
             <label>
-              <input value={schoolData.schoolName} type="text" name="schoolName" placeholder='schoolName'
+              <input value={schoolData.schoolName} type="text" name="schoolName" placeholder='Դպրոցի անվանումը'
                 onChange={handleChange} />
             </label>
             <label>
-              <input value={schoolData.address} type="text" name="address" placeholder='address'
+              <input value={schoolData.address} type="text" name="address" placeholder='Հասցե'
                 onChange={handleChange} />
             </label>
             <label>
-              <input value={schoolData.directorName} type="text" name="directorName" placeholder='directorName'
+              <input value={schoolData.directorName} type="text" name="directorName" placeholder='Տնօրենի Անուն Ազգանուն'
                 onChange={handleChange} />
             </label>
             <label>
-              <input value={schoolData.directorPhoneNumber} type="number" name="directorPhoneNumber"
-                placeholder='directorPhoneNumber'
+              <input value={schoolData.directorPhoneNumber} type="number" placeholder="Տնօրենի հեռախոսահամար"
+                name='directorPhoneNumber'
                 onChange={handleChange} />
             </label>
             <label>
-              <input value={schoolData.directorEmailAddress} type="email" name="directorEmailAddress"
-                placeholder='directorEmailAddress'
+              <input value={schoolData.directorEmailAddress} type="email" placeholder="Տնօրենի Էլ․ փոստ"
+                name='directorEmailAddress'
                 onChange={handleChange} />
             </label>
-            <span>childrenMaxCount</span>
+            <span>Ուսուցիչների առավելագույն քանակ</span>
             <label>
-              <input value={schoolData.teachersMaxCount} type="number" name="teachersMaxCount"
-                placeholder='teachersMaxCount' onChange={handleChange} />
+              <input value={schoolData.teachersMaxCount} type="number"
+                name='teachersMaxCount' onChange={handleChange} />
             </label>
-            <span>childrenMaxCount</span>
+            <span>Աշակերտների առավելագույն քանակ</span>
             <label>
-              <input value={schoolData.childrenMaxCount} type="number" name="childrenMaxCount"
-                placeholder='childrenMaxCount' onChange={handleChange} />
+              <input value={schoolData.childrenMaxCount} type="number"
+                name='childrenMaxCount' onChange={handleChange} />
             </label>
-            <button onClick={addSchoolList}>{selectedSchool ? 'Save changes' : 'Add School'}</button>
+            <button onClick={addSchoolList}>{selectedSchool ? 'Պահպանել' : 'Ավելացնել դպրոց'}</button>
             <div>
             </div>
           </div>

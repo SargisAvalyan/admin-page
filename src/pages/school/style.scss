@@ -8,7 +8,7 @@
 
     &:hover {
         cursor: pointer;
-       
+
         border-color: white;
         border-bottom: 2px solid black;
     }
@@ -34,20 +34,23 @@
     background-color: rgb(172, 255, 244);
     display: flex;
     flex-direction: column;
-    
+
 }
+
+
+
 ::-webkit-scrollbar {
     width: 10px;
 }
-                    
+
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 1 50px 6px rgb(8, 68, 53); 
+    -webkit-box-shadow: inset 1 50px 6px rgb(8, 68, 53);
     border-radius: 10px;
 }
-                    
+
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
 .category-info input {
@@ -85,6 +88,7 @@
     align-items: center;
     justify-content: center;
     transition: 0.5s;
+
     &:hover {
         cursor: pointer;
         background-color: rgba(7, 212, 144, 0.808);
@@ -94,7 +98,7 @@
 .category-inputs {
     width: 100%;
     min-height: calc(100vh - 64px);
-    height: 100%;
+    height: calc(100vh - 64px);
     overflow: auto;
     background-color: rgba(1, 117, 102, 0.644);
     display: flex;
@@ -108,14 +112,15 @@
     display: flex;
     flex-wrap: wrap;
     margin: 5px;
-    
+
 }
 
 .brder {
     border: 3px solid rgb(10, 100, 122);
 }
 
-.deletebutton, .editbutton{
+.deletebutton,
+.editbutton {
     width: 99px !important;
     height: 18px !important;
     border: 0.5px solid blue !important;

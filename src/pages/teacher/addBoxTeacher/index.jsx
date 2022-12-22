@@ -11,8 +11,8 @@ const AddBox = ({ item, index, onDelete, onEdit }) => {
         onEdit()
     }
     return (<>
-        <button className="deletebutton" onClick={deleteTeacher}>Delete</button>
-        <button className="deletebutton" onClick={EditTeacher}>Edite</button>
+        <button className="deletebutton" onClick={deleteTeacher}>Հեռացնել</button>
+        <button className="deletebutton" onClick={EditTeacher}>Փոփոխել</button>
         <div className='add-box-conteiner'>
             <div className='image-box' style={{ backgroundImage: `url(${image})` }}>
             </div>

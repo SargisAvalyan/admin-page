@@ -84,33 +84,33 @@ setSelectedTeacherIndex(index)
                         </div>
 
 
-                    }) : null}
+                    }) : <div className='empty-box'><p>Ուսուցիչների ցանկը դատարկ է ․ ․ ․</p></div> }
                 </div>
 
 
                 {ShowModal &&
                     <div className='category-inputs'>
                         <label>
-                            <input value={teacherData.firstName} type="text" name="firstName" placeholder='firstName' onChange={handleChange} />
+                            <input value={teacherData.firstName} type="text" name="firstName" placeholder='Անուն' onChange={handleChange} />
                         </label>
                         <label>
-                            <input value={teacherData.lastName} type="text" name="lastName" placeholder='lastName' onChange={handleChange} />
+                            <input value={teacherData.lastName} type="text" name="lastName" placeholder='Ազգանուն' onChange={handleChange} />
                         </label>
                         <label>
-                            <input value={teacherData.profession} type="text" name="profession" placeholder='profession' onChange={handleChange} />
+                            <input value={teacherData.profession} type="text" name="profession" placeholder='Մասնագիտությունը' onChange={handleChange} />
                         </label>
                         <label>
-                            <input value={teacherData.phoneNumber} type="number" name="phoneNumber" placeholder='phoneNumber' onChange={handleChange} />
+                            <input value={teacherData.phoneNumber} type="number" name="phoneNumber" placeholder='Հեռախոսահամար' onChange={handleChange} />
                         </label>
 
                         <label>
-                            <input value={teacherData.salary} type="number" name="salary" placeholder='salary' onChange={handleChange} />
+                            <input value={teacherData.salary} type="number" name="salary" placeholder='Աշխատավարձ' onChange={handleChange} />
                         </label>
                         <label>
-                            <input value={teacherData.experience} type="number" name="experience" placeholder='experience' onChange={handleChange} />
+                            <input value={teacherData.experience} type="number" name="experience" placeholder='Աշխատանքային փորձ' onChange={handleChange} />
                         </label>
 
-                        <button onClick={addTeacherList}>{selectedTeacher ? 'Save changes' : 'Add Teacher'}</button>
+                        <button onClick={addTeacherList}>{selectedTeacher ? 'Պահպանել' : 'Ավելացնել ուսուցիչ'}</button>
                         <div >
                         </div>
 
